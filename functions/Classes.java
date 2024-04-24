@@ -1,6 +1,6 @@
 package functions;
 
-public class h {
+public class Classes {
     public static boolean BiSearch(int[] arr, int value){
         int start = 0;
         int end = arr.length-1;

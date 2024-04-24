@@ -1,8 +1,6 @@
 import java.util.Scanner;
-import static functions.h.BiSearch;
-import static functions.h.Calculator;
-import java.util.ArrayList;
-import java.util.Arrays;
+
+import static functions.Classes.Calculator;
 
 public class Main {
     public static void main(String[] args){
