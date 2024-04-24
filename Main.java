@@ -5,30 +5,32 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Main {
-    public static void main(String[] args){
-        int num, num2, total;
-        String operation, result;
-        int results[] = {0};
-        Scanner keyboard = new Scanner(System.in);
-        try {
-            System.out.print("Enter a number: ");
-            num = keyboard.nextInt();
-            System.out.print("Enter an operation: ");
-            operation = keyboard.next();
-            System.out.print("Enter a number: ");
-            num2 = keyboard.nextInt();
-            total = Calculator(num,num2, operation);
-            System.out.println("The result is: " + total);
-            System.out.println("Do you want to store results?(Y/N): ");
-            result = keyboard.next();
-            if(result.equals("Y") || result.equals("y")){
-                System.out.println("Data Saved");
-            }else{
-                System.out.println("Data has been deleted");
+    public static void main(String[] args) {
+        int num;
+        int Numlab[] = new int[10];
+        for (int c = 0; c < 10; c++) {
+            Numlab[c] = c;
+        }
+        while (true) {
+            try {
+                Scanner keyboard = new Scanner(System.in);
+                System.out.print("Please choose a number: ");
+                num = keyboard.nextInt();
+                if (BiSearch(Numlab, num)) {
+                    System.out.println("Correct!");
+                } else {
+                    System.out.println("You have choosen a number outside the bounds");
+                }
+                System.out.println("Do you want to play again? (Y/N)");
+                String res = keyboard.next();
+                if(res.equals("Y") || res.equals("y")){
+                    continue;
+                }else{
+                    break;
+                }
+            } catch (Exception e) {
+                System.out.println("This is not a valid Integer.");
             }
-
-        } catch (Exception e) {
-            System.out.println("This is not a number.");
         }
     }
 }
